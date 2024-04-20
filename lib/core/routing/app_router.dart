@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
+    // This arguments to be passed in any screen like this: (arguments as ClassName).
+    // ignore: unused_local_variable
+    final arguments = settings.arguments;
+
     switch (settings.name) {
       case Routes.onBoardingView:
         return MaterialPageRoute(
