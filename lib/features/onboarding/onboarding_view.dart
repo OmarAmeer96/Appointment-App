@@ -1,4 +1,5 @@
 import 'package:appointment_app/core/helpers/extensions.dart';
+import 'package:appointment_app/core/helpers/spacing.dart';
 import 'package:appointment_app/core/routing/routes.dart';
 import 'package:appointment_app/core/theming/styles.dart';
 import 'package:appointment_app/core/widgets/custom_main_button.dart';
@@ -20,7 +21,7 @@ class OnboardingView extends StatelessWidget {
             child: Column(
               children: [
                 const DocNameAndLogo(),
-                SizedBox(height: 50.h),
+                verticalSpace(50),
                 const DocImageAndBackgroundLogoAndText(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -30,16 +31,16 @@ class OnboardingView extends StatelessWidget {
                       Text(
                         textAlign: TextAlign.center,
                         "Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.",
-                        style: Styles.font13BlueBold,
+                        style: Styles.font13GreyBold,
                       ),
-                      SizedBox(height: 30.h),
+                      verticalSpace(30),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: CustomMainButton(
                           onPressed: () {
                             context.pushNamed(Routes.loginView);
                           },
-                          text: 'Get Started',
+                          buttonText: 'Get Started',
                         ),
                       ),
                     ],

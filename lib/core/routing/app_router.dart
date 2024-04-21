@@ -1,6 +1,7 @@
 import 'package:appointment_app/core/routing/routes.dart';
 import 'package:appointment_app/features/login/ui/login_view.dart';
 import 'package:appointment_app/features/onboarding/onboarding_view.dart';
+import 'package:appointment_app/features/signup/ui/sign_up_view.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -17,6 +18,10 @@ class AppRouter {
       case Routes.loginView:
         return MaterialPageRoute(
           builder: (_) => const LoginView(),
+        );
+      case Routes.signUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SignUpView(),
         );
       default:
         return MaterialPageRoute(

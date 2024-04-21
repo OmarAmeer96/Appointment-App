@@ -1,4 +1,5 @@
 import 'package:appointment_app/core/theming/colors_manager.dart';
+import 'package:appointment_app/core/theming/font_family_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -6,7 +7,7 @@ class Styles {
   static TextStyle font32BlueBold = TextStyle(
     fontSize: 32.sp,
     color: ColorsManager.mainBlue,
-    fontFamily: 'Inter-Bold',
+    fontFamily: FontFamilyHelper.bold,
   );
 
   static TextStyle font18White600 = TextStyle(
@@ -14,9 +15,20 @@ class Styles {
     color: Colors.white,
   );
 
-  static TextStyle font13BlueBold = TextStyle(
+  static TextStyle font13GreyBold = TextStyle(
     fontSize: 13.sp,
-    color: const Color(0xFF757575),
-    fontFamily: 'Inter-Regular',
+    color: ColorsManager.mainGrey,
+    fontFamily: FontFamilyHelper.regular,
+  );
+
+  static TextStyle enabledTextFieldsLabelText = TextStyle(
+    color: ColorsManager.mainGrey,
+    fontSize: 14.sp,
+    fontFamily: FontFamilyHelper.medium,
+  );
+  static TextStyle focusedTextFieldsLabelText = TextStyle(
+    color: ColorsManager.focusedLabelTextColor,
+    fontSize: 14.sp,
+    fontFamily: FontFamilyHelper.medium,
   );
 }
