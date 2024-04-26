@@ -16,6 +16,8 @@ class CustomMainTextFormFiels extends StatelessWidget {
     this.isObscureText,
     this.style,
     this.fillColor,
+    this.controller,
+    required this.validator,
   });
 
   final EdgeInsetsGeometry? contentPadding;
@@ -28,10 +30,13 @@ class CustomMainTextFormFiels extends StatelessWidget {
   final bool? isObscureText;
   final TextStyle? style;
   final Color? fillColor;
+  final TextEditingController? controller;
+  final Function(String?) validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
         isDense: true,
         contentPadding: contentPadding ??
@@ -63,6 +68,14 @@ class CustomMainTextFormFiels extends StatelessWidget {
                 width: 1.3,
               ),
             ),
+        focusedErrorBorder: errorBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16.r),
+              borderSide: const BorderSide(
+                color: ColorsManager.errorTextFieldColor,
+                width: 1.3,
+              ),
+            ),
         labelText: labelText,
         labelStyle: labelStyle ?? Styles.enabledTextFieldsLabelText,
         suffixIcon: suffixIcon,
@@ -71,6 +84,9 @@ class CustomMainTextFormFiels extends StatelessWidget {
       ),
       obscureText: isObscureText ?? false,
       style: style ?? Styles.focusedTextFieldsLabelText,
+      validator: (value) {
+        return validator(value);
+      },
     );
   }
 }

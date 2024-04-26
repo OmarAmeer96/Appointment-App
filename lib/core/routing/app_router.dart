@@ -1,5 +1,6 @@
 import 'package:appointment_app/core/di/dependency_injection.dart';
 import 'package:appointment_app/core/routing/routes.dart';
+import 'package:appointment_app/features/home/ui/home_view.dart';
 import 'package:appointment_app/features/login/logic/login_cubit/login_cubit.dart';
 import 'package:appointment_app/features/login/ui/login_view.dart';
 import 'package:appointment_app/features/onboarding/onboarding_view.dart';
@@ -28,6 +29,10 @@ class AppRouter {
       case Routes.signUpScreen:
         return MaterialPageRoute(
           builder: (_) => const SignUpView(),
+        );
+      case Routes.homeView:
+        return MaterialPageRoute(
+          builder: (_) => const HomeView(),
         );
       default:
         return MaterialPageRoute(
