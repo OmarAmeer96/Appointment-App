@@ -12,6 +12,7 @@ class CustomMainTextFormFiels extends StatelessWidget {
     this.errorBorder,
     required this.labelText,
     this.labelStyle,
+    this.prefixIcon,
     this.suffixIcon,
     this.isObscureText,
     this.style,
@@ -26,6 +27,7 @@ class CustomMainTextFormFiels extends StatelessWidget {
   final InputBorder? errorBorder;
   final String labelText;
   final TextStyle? labelStyle;
+  final Widget? prefixIcon;
   final Widget? suffixIcon;
   final bool? isObscureText;
   final TextStyle? style;
@@ -78,6 +80,7 @@ class CustomMainTextFormFiels extends StatelessWidget {
             ),
         labelText: labelText,
         labelStyle: labelStyle ?? Styles.enabledTextFieldsLabelText,
+        prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         fillColor: fillColor ?? ColorsManager.textFieldFillColor,
         filled: true,

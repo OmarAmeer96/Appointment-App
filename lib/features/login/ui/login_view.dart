@@ -2,13 +2,12 @@ import 'package:appointment_app/core/helpers/spacing.dart';
 import 'package:appointment_app/core/theming/colors_manager.dart';
 import 'package:appointment_app/core/theming/styles.dart';
 import 'package:appointment_app/core/widgets/custom_main_button.dart';
-import 'package:appointment_app/features/login/data/models/login_request_body.dart';
 import 'package:appointment_app/features/login/logic/login_cubit/login_cubit.dart';
 import 'package:appointment_app/features/login/ui/widgets/do_not_have_an_account_text.dart';
-import 'package:appointment_app/features/login/ui/widgets/email_and_password_widget.dart';
+import 'package:appointment_app/features/login/ui/widgets/login_email_and_password_widget.dart';
 import 'package:appointment_app/features/login/ui/widgets/login_bloc_listener.dart';
 import 'package:appointment_app/features/login/ui/widgets/login_view_welcome_texts.dart';
-import 'package:appointment_app/features/login/ui/widgets/terms_and_conditions_text.dart';
+import 'package:appointment_app/core/widgets/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +35,7 @@ class LoginView extends StatelessWidget {
                   verticalSpace(32),
                   Column(
                     children: [
-                      const EmailAndPasswordWidget(),
+                      const LoginEmailAndPasswordWidget(),
                       Align(
                         alignment: AlignmentDirectional.centerEnd,
                         child: GestureDetector(
@@ -75,10 +74,11 @@ class LoginView extends StatelessWidget {
   void validateThenLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
       context.read<LoginCubit>().emitLoginState(
-            LoginRequestBody(
-              email: context.read<LoginCubit>().emailController.text,
-              password: context.read<LoginCubit>().passwordController.text,
-            ),
+          // Old Code:
+          // LoginRequestBody(
+          //   email: context.read<LoginCubit>().emailController.text,
+          //   password: context.read<LoginCubit>().passwordController.text,
+          // ),
           );
     }
   }

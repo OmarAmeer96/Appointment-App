@@ -4,6 +4,7 @@ import 'package:appointment_app/features/home/ui/home_view.dart';
 import 'package:appointment_app/features/login/logic/login_cubit/login_cubit.dart';
 import 'package:appointment_app/features/login/ui/login_view.dart';
 import 'package:appointment_app/features/onboarding/onboarding_view.dart';
+import 'package:appointment_app/features/signup/logic/signup_cubit/signup_cubit.dart';
 import 'package:appointment_app/features/signup/ui/sign_up_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +29,10 @@ class AppRouter {
         );
       case Routes.signUpScreen:
         return MaterialPageRoute(
-          builder: (_) => const SignUpView(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<SignupCubit>(),
+            child: const SignUpView(),
+          ),
         );
       case Routes.homeView:
         return MaterialPageRoute(
