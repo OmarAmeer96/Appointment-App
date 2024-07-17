@@ -19,6 +19,8 @@ class CustomMainTextFormFiels extends StatelessWidget {
     this.fillColor,
     this.controller,
     required this.validator,
+    this.focusNode,
+    this.nextFocusNode,
   });
 
   final EdgeInsetsGeometry? contentPadding;
@@ -34,6 +36,8 @@ class CustomMainTextFormFiels extends StatelessWidget {
   final Color? fillColor;
   final TextEditingController? controller;
   final Function(String?) validator;
+  final FocusNode? focusNode;
+  final FocusNode? nextFocusNode;
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +93,12 @@ class CustomMainTextFormFiels extends StatelessWidget {
       style: style ?? Styles.focusedTextFieldsLabelText,
       validator: (value) {
         return validator(value);
+      },
+      focusNode: focusNode,
+      onFieldSubmitted: (value) {
+        if (nextFocusNode != null) {
+          nextFocusNode!.requestFocus();
+        }
       },
     );
   }

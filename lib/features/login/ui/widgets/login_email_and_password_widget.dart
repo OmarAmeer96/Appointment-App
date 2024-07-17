@@ -27,6 +27,9 @@ class _LoginEmailAndPasswordWidgetState
 
   late TextEditingController passwordController;
 
+  final FocusNode emailFocusNode = FocusNode();
+  final FocusNode passwordFocusNode = FocusNode();
+
   @override
   void initState() {
     passwordController = context.read<LoginCubit>().passwordController;
@@ -65,6 +68,8 @@ class _LoginEmailAndPasswordWidgetState
               }
             },
             prefixIcon: const Icon(Icons.email_outlined),
+            focusNode: emailFocusNode,
+            nextFocusNode: passwordFocusNode,
           ),
           verticalSpace(18),
           CustomMainTextFormFiels(
@@ -89,6 +94,7 @@ class _LoginEmailAndPasswordWidgetState
                 return 'Please enter your password';
               }
             },
+            focusNode: passwordFocusNode,
           ),
           verticalSpace(18),
           PasswordValidations(
@@ -106,6 +112,8 @@ class _LoginEmailAndPasswordWidgetState
   @override
   void dispose() {
     passwordController.dispose();
+    emailFocusNode.dispose();
+    passwordFocusNode.dispose();
     super.dispose();
   }
 }

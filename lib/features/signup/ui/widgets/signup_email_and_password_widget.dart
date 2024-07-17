@@ -27,6 +27,12 @@ class _SignupEmailAndPasswordWidgetState
 
   late TextEditingController passwordController;
 
+  final FocusNode nameFocusNode = FocusNode();
+  final FocusNode emailFocusNode = FocusNode();
+  final FocusNode phoneNumberFocusNode = FocusNode();
+  final FocusNode passwordFocusNode = FocusNode();
+  final FocusNode confirmPasswordFocusNode = FocusNode();
+
   @override
   void initState() {
     passwordController = context.read<SignupCubit>().passwordController;
@@ -65,6 +71,8 @@ class _SignupEmailAndPasswordWidgetState
               }
             },
             prefixIcon: const Icon(Icons.email_outlined),
+            focusNode: nameFocusNode,
+            nextFocusNode: emailFocusNode,
           ),
           verticalSpace(18),
           CustomMainTextFormFiels(
@@ -79,6 +87,8 @@ class _SignupEmailAndPasswordWidgetState
               }
             },
             prefixIcon: const Icon(Icons.email_outlined),
+            focusNode: emailFocusNode,
+            nextFocusNode: phoneNumberFocusNode,
           ),
           verticalSpace(18),
           CustomMainTextFormFiels(
@@ -94,6 +104,8 @@ class _SignupEmailAndPasswordWidgetState
                 return 'Please enter a valid phone number';
               }
             },
+            focusNode: phoneNumberFocusNode,
+            nextFocusNode: passwordFocusNode,
           ),
           verticalSpace(18),
           CustomMainTextFormFiels(
@@ -120,6 +132,8 @@ class _SignupEmailAndPasswordWidgetState
                 return 'Please enter your password';
               }
             },
+            focusNode: passwordFocusNode,
+            nextFocusNode: confirmPasswordFocusNode,
           ),
           verticalSpace(18),
           CustomMainTextFormFiels(
@@ -147,6 +161,7 @@ class _SignupEmailAndPasswordWidgetState
                 return 'Please enter your password';
               }
             },
+            focusNode: confirmPasswordFocusNode,
           ),
           verticalSpace(18),
           // To reduce the space, so I commented it out
@@ -166,6 +181,11 @@ class _SignupEmailAndPasswordWidgetState
   @override
   void dispose() {
     passwordController.dispose();
+    nameFocusNode.dispose();
+    emailFocusNode.dispose();
+    phoneNumberFocusNode.dispose();
+    passwordFocusNode.dispose();
+    confirmPasswordFocusNode.dispose();
     super.dispose();
   }
 }
