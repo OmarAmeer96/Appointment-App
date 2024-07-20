@@ -30,6 +30,23 @@ jobs:
           bundler-cache: true
           working-directory: android
 
+      - name: Debug Ruby Environment
+        run: |
+          ruby -v
+          gem -v
+          bundler -v
+        working-directory: android
+
+      - name: Install Bundler
+        run: |
+          gem install bundler
+        working-directory: android
+
+      - name: Bundle Install
+        run: |
+          bundle install
+        working-directory: android
+
       - name: Build and Distribute App
         env:
           FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
