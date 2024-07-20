@@ -22,7 +22,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-
+      # If there is a problem with RUBY, Just run this command in the terminal "bundle lock --add-platform x86_64-linux".
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
