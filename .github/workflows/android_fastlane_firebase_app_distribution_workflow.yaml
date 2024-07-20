@@ -26,26 +26,9 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2.3"
+          ruby-version: "3.3.4"
           bundler-cache: true
           working-directory: android
-
-      - name: Debug Ruby Environment
-        run: |
-          ruby -v
-          gem -v
-          bundler -v
-        working-directory: android
-
-      - name: Install Bundler
-        run: |
-          gem install bundler
-        working-directory: android
-
-      - name: Bundle Install
-        run: |
-          bundle install
-        working-directory: android
 
       - name: Build and Distribute App
         env:
