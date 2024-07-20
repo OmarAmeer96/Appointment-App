@@ -68,5 +68,6 @@ jobs:
         run: |
           echo "Starting Fastlane..."
           bundle install
+          cd ..
           bundle exec fastlane ios firebase_distribution
         working-directory: ios
