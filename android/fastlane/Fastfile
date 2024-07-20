@@ -16,23 +16,3 @@ platform :android do
     )
   end
 end
-
-platform :ios do
-  desc "Lane for iOS Firebase App Distribution"
-  lane :firebase_distribution do
-    sh "flutter clean"
-    sh "flutter build ios --release --no-tree-shake-icons"
-    build_app(
-      workspace: "Runner.xcworkspace",
-      scheme: "Runner",
-      export_method: "ad-hoc"
-    )
-    firebase_app_distribution(
-      app: "1:383408612193:ios:81a271d65d9459fc4c5b20",
-      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
-      ios_artifact_path: "../build/ios/ipa/Runner.ipa",
-      testers: "omar.ameer2333@gmail.com",
-      release_notes: "This is the first iOS release using Fastlane. Enjoy! 🚀"
-    )
-  end
-end
