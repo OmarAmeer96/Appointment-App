@@ -41,15 +41,15 @@ jobs:
           bundle exec fastlane android firebase_distribution
         working-directory: android
 
-      - name: Send Email on Success
-        if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: Build and Distribution Successful
-          body: The latest build and distribution were successful!
-          to: omar.ameer2333@gmail.com
-          from: ${{ secrets.SMTP_USERNAME }}
+      # - name: Send Email on Success
+      #   if: success()
+      #   uses: dawidd6/action-send-mail@v3
+      #   with:
+      #     server_address: smtp.gmail.com
+      #     server_port: 465
+      #     username: ${{ secrets.SMTP_USERNAME }}
+      #     password: ${{ secrets.SMTP_PASSWORD }}
+      #     subject: Build and Distribution Successful
+      #     body: The latest build and distribution were successful!
+      #     to: omar.ameer2333@gmail.com
+      #     from: ${{ secrets.SMTP_USERNAME }}
