@@ -5,7 +5,10 @@ platform :android do
   desc "Lane for Android Firebase App Distribution"
   lane :firebase_distribution do
     sh "flutter clean"
-    sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
+      # Another command to release:
+      # flutter run --release -t lib/main_production.dart --flavor production
+    # sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
+    sh "flutter run --release -t lib/main_production.dart --flavor production --no-tree-shake-icons"
     firebase_app_distribution(
       app: "1:383408612193:android:da0f9d86c0a8051e4c5b20",
       firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
