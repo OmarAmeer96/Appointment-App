@@ -10,6 +10,12 @@ class Styles {
     fontFamily: FontFamilyHelper.bold,
   );
 
+  static TextStyle font18BlackBold = TextStyle(
+    fontSize: 20.sp,
+    color: ColorsManager.mainBlack,
+    fontFamily: FontFamilyHelper.bold,
+  );
+
   static TextStyle font18White600 = TextStyle(
     fontSize: 18.sp,
     color: Colors.white,

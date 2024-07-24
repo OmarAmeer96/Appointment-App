@@ -1,3 +1,4 @@
+import 'package:appointment_app/features/home/ui/widgets/home_top_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,14 +7,20 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home View'),
-      ),
-      body: const SafeArea(
-        child: Center(
-          child: Column(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.fromLTRB(
+            16,
+            12,
+            16,
+            12,
+          ),
+          child: const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Home View'),
+              HomeTopAppBar(),
             ],
           ),
         ),
