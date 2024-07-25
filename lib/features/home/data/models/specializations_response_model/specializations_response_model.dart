@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'datum.dart';
+import 'specializations_data.dart';
 
 part 'specializations_response_model.g.dart';
 

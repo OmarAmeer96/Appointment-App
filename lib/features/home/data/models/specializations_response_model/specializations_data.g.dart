@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'datum.dart';
+part of 'specializations_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

@@ -10,5 +10,7 @@ abstract class HomeApiService {
   factory HomeApiService(Dio dio) = _HomeApiService;
 
   @GET(HomeApiConstants.getAllSpecializations)
-  Future<SpecializationsResponseModel> getAllSpecializations();
+  Future<SpecializationsResponseModel> getAllSpecializations({
+    @Header('Authorization') required String token,
+  });
 }

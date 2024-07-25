@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'doctor.dart';
 
-part 'datum.g.dart';
+part 'specializations_data.g.dart';
 
 @JsonSerializable()
 class SpecializationsData {
