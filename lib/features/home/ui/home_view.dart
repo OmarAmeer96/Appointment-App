@@ -26,14 +26,11 @@ class HomeView extends StatelessWidget {
               const HomeTopAppBar(),
               const DoctorsBlueContainer(),
               verticalSpace(24.h),
-              const DoctorSpecialityListView(),
-              verticalSpace(18.h),
-              // CustomSectionHeader(
-              //   title: "Recommendation Doctor",
-              //   seeAllOnTap: () {},
-              // ),
-              // verticalSpace(12.h),
-              const RecommendationDoctorsListView(),
+
+              // This is the part that we wrap it with the BlocBuilder.
+              // const DoctorSpecialityListView(),
+              // verticalSpace(18.h),
+              // const RecommendationDoctorsListView(),
             ],
           ),
         ),
