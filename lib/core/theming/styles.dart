@@ -33,7 +33,7 @@ class Styles {
     fontFamily: FontFamilyHelper.medium,
   );
   static TextStyle focusedTextFieldsLabelText = TextStyle(
-    color: ColorsManager.focusedLabelTextColor,
+    color: ColorsManager.mainBlack,
     fontSize: 14.sp,
     fontFamily: FontFamilyHelper.medium,
   );
