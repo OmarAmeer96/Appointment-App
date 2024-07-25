@@ -2,6 +2,7 @@ import 'package:appointment_app/core/helpers/spacing.dart';
 import 'package:appointment_app/core/theming/font_family_helper.dart';
 import 'package:appointment_app/core/theming/styles.dart';
 import 'package:appointment_app/features/home/data/models/specializations_response_model/doctor.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,12 +27,19 @@ class DoctorsListViewItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12.r),
-            child: Image.network(
+            child: CachedNetworkImage(
+              imageUrl:
+                  // doctorsList![itemIndex]!.photo ??
+                  'https://www.uclahealth.org/sites/default/files/styles/portrait_3x4_016000_480x640/public/images/female-doc-with-other-docs.jpg?h=dd028d5a&itok=ajLNibn5',
               width: 110.w,
               height: 110.h,
-              // doctorsList![itemIndex]!.photo ??
-              'https://www.uclahealth.org/sites/default/files/styles/portrait_3x4_016000_480x640/public/images/female-doc-with-other-docs.jpg?h=dd028d5a&itok=ajLNibn5',
               fit: BoxFit.cover,
+              placeholder: (context, url) => const Center(
+                child: CircularProgressIndicator(),
+              ),
+              errorWidget: (context, url, error) => const Center(
+                child: Icon(Icons.error),
+              ),
             ),
           ),
           horizontalSpace(16.w),
