@@ -1,3 +1,6 @@
+import 'package:appointment_app/core/helpers/constants.dart';
+import 'package:appointment_app/core/helpers/shared_pref_helper.dart';
+import 'package:appointment_app/core/networking/dio_factory.dart';
 import 'package:appointment_app/features/login/data/models/login_request_body.dart';
 import 'package:appointment_app/features/login/data/repos/loign_repo.dart';
 import 'package:appointment_app/features/login/logic/login_cubit/login_state.dart';
@@ -21,12 +24,21 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     response.when(
-      success: (loginResponse) {
+      success: (loginResponse) async {
+        await saveUserToken(loginResponse.userData!.token!);
         emit(LoginState.success(loginResponse));
       },
       failure: (error) {
         emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
       },
     );
+  }
+
+  // Save the token to shared preferences
+  Future<void> saveUserToken(String token) async {
+    await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
+
+    // This is to solve a problem that the [DioFactory] initializes with no token in the begginning, and after the login the token should be refreshed in the [DioFactory], the other part is in [DioFactory] file line 37.
+    DioFactory.setTokenAfterLogin(token);
   }
 }

@@ -25,15 +25,19 @@ class SharedPrefHelper {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     debugPrint("SharedPrefHelper: setData with key: $key and value: $value");
     switch (value.runtimeType) {
+      // ignore: type_literal_in_constant_pattern
       case String:
         await sharedPreferences.setString(key, value);
         break;
+      // ignore: type_literal_in_constant_pattern
       case int:
         await sharedPreferences.setInt(key, value);
         break;
+      // ignore: type_literal_in_constant_pattern
       case bool:
         await sharedPreferences.setBool(key, value);
         break;
+      // ignore: type_literal_in_constant_pattern
       case double:
         await sharedPreferences.setDouble(key, value);
         break;
