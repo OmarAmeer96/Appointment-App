@@ -19,6 +19,7 @@ class DoctorSpecialityListView extends StatelessWidget {
         SizedBox(
           height: 100.h,
           child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemCount: 8,
             itemBuilder: (context, index) {
