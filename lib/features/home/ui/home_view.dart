@@ -2,6 +2,7 @@ import 'package:appointment_app/core/helpers/spacing.dart';
 import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_widget.dart';
 import 'package:appointment_app/features/home/ui/widgets/doctors_blue_container.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_top_app_bar.dart';
+import 'package:appointment_app/features/home/ui/widgets/recommendation_doctors_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,6 +28,7 @@ class HomeView extends StatelessWidget {
               verticalSpace(24.h),
               const DoctorSpecialityWidget(),
               verticalSpace(23.h),
+              const RecommendationDoctorsWidget(),
             ],
           ),
         ),
