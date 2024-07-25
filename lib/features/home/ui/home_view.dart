@@ -1,5 +1,5 @@
 import 'package:appointment_app/core/helpers/spacing.dart';
-import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_widget.dart';
+import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_list_view.dart';
 import 'package:appointment_app/features/home/ui/widgets/doctors_blue_container.dart';
 import 'package:appointment_app/features/home/ui/widgets/home_top_app_bar.dart';
 import 'package:appointment_app/features/home/ui/widgets/recommendation_doctors_widget.dart';
@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
               verticalSpace(24.h),
               const DoctorSpecialityListView(),
               verticalSpace(18.h),
-              const RecommendationDoctorsWidget(),
+              const RecommendationDoctorsListView(),
             ],
           ),
         ),
