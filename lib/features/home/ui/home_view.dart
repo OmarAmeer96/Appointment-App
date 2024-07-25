@@ -1,4 +1,9 @@
+import 'package:appointment_app/core/helpers/spacing.dart';
+import 'package:appointment_app/features/home/ui/widgets/doctor_speciality_widget.dart';
+import 'package:appointment_app/features/home/ui/widgets/doctors_blue_container.dart';
+import 'package:appointment_app/features/home/ui/widgets/home_top_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -6,14 +11,22 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home View'),
-      ),
-      body: const SafeArea(
-        child: Center(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Container(
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(
+            vertical: 12.h,
+            horizontal: 16.w,
+          ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Home View'),
+              const HomeTopAppBar(),
+              const DoctorsBlueContainer(),
+              verticalSpace(24.h),
+              const DoctorSpecialityWidget(),
+              verticalSpace(23.h),
             ],
           ),
         ),
