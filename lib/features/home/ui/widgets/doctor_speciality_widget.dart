@@ -26,7 +26,7 @@ class DoctorSpecialityListView extends StatelessWidget {
                 padding: EdgeInsetsDirectional.only(
                   start: index == 0 ? 0 : 24.w,
                 ),
-                child: DoctorSpecialityItem(
+                child: const DoctorSpecialityItem(
                   specialityString: 'assets/images/speciality_1.png',
                   specialityText: "General",
                 ),
