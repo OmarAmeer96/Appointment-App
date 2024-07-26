@@ -37,7 +37,6 @@ class LoginCubit extends Cubit<LoginState> {
   // Save the token to shared preferences
   Future<void> saveUserToken(String token) async {
     await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
-
     // This is to solve a problem that the [DioFactory] initializes with no token in the begginning, and after the login the token should be refreshed in the [DioFactory], the other part is in [DioFactory] file line 37.
     DioFactory.setTokenAfterLogin(token);
   }
