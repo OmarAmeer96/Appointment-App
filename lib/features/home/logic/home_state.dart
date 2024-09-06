@@ -1,4 +1,5 @@
 import 'package:appointment_app/core/networking/api_error_handler.dart';
+import 'package:appointment_app/features/home/data/models/specializations_response_model/doctor.dart';
 import 'package:appointment_app/features/home/data/models/specializations_response_model/specializations_response_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_state.freezed.dart';
@@ -9,6 +10,14 @@ class HomeState<T> with _$HomeState<T> {
 
   // Specializations
   const factory HomeState.specializationLoading() = SpecializationLoading;
-  const factory HomeState.specializationSuccess(SpecializationsResponseModel specializationsResponseModel) = SpecializationSuccess<T>;
-  const factory HomeState.specializationError(ErrorHandler errorHandler) = SpecializationError;
+  const factory HomeState.specializationSuccess(
+          SpecializationsResponseModel specializationsResponseModel) =
+      SpecializationSuccess<T>;
+  const factory HomeState.specializationError(ErrorHandler errorHandler) =
+      SpecializationError;
+
+  // Doctors
+  const factory HomeState.doctorSuccess(List<Doctor?> doctorsList) =
+      DoctorSuccess<T>;
+  const factory HomeState.doctorError(ErrorHandler errorHandler) = DoctorError;
 }
